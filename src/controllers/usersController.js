@@ -6,7 +6,7 @@ const { createHash, isValidPassword } = require('../config/bcrypt.js')
 async function login (req, res) {
     try {
         if (!req.user) {
-            return res.status(400).send({ status: 'error', error: "Invalid credentials" })
+            return res.status(401).send({ status: 'error', message: "Invalid credentials" })
         } 
                 
         req.session.user = {
@@ -34,7 +34,7 @@ async function login (req, res) {
         
     } catch (error) {
         req.logger.info("Error al iniciar sesión" + error)
-        res.status(500).send('Error al iniciar sesión');
+        res.status(500).send({message: 'Error al iniciar sesión'});
     }
 }
 
