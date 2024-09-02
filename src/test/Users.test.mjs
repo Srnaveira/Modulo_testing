@@ -12,7 +12,7 @@ describe('Users API', function () {
     before(async function () {
         this.timeout(10000);
         try {
-            await mongoose.connect('mongodb+srv://test:HOLAmundo123456@test.z4he9ej.mongodb.net/?retryWrites=true&w=majority&appName=test');
+            await mongoose.connect('INGRESE CREDENCIALES MONGODB');
             console.log('Conexión a MongoDB exitosa');
         } catch (error) {
             console.error('Error al conectar a MongoDB:', error);
